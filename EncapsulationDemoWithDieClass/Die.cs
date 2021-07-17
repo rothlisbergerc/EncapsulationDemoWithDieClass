@@ -45,8 +45,12 @@ namespace EncapsulationDemoWithDieClass
         /// and no new value generated. 
         /// </summary>
         public byte Roll()
-        {            
-            Value = (byte)rand.Next(1, 7);
+        {
+            if (!IsHeld) // If Die is not held
+            {
+                Value = (byte)rand.Next(1, 7);
+            }
+            
             return Value;
         }
 
