@@ -10,7 +10,7 @@ namespace EncapsulationDemoWithDieClass
     {
         static void Main(string[] args)
         {
-            
+            Die die1 = new Die();
         }
     }
 }
