@@ -14,7 +14,7 @@ namespace EncapsulationDemoWithDieClass
         /// <summary>
         /// The face-up value of the die.
         /// </summary>
-        public byte Value { get; set; }
+        public byte Value { get; private set; } // Value can only be set inside this class
 
         /// <summary>
         /// Returns true if the die is currently held
