@@ -24,10 +24,12 @@ namespace EncapsulationDemoWithDieClass
         }
 
 
-        public Die()
-        {            
-            // Roll die on creation to generate first random number to avoid a value of 0.
-            Roll(); 
+        public Die():this(1, 6)
+        {
+            //minValue = 1;
+            //maxValue = 6;
+            //// Roll die on creation to generate first random number to avoid a value of 0.
+            //Roll(); 
         }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace EncapsulationDemoWithDieClass
         {
             this.minValue = minValue;
             this.maxValue = maxValue;
+            Roll();
         }
 
         /// <summary>
