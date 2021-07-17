@@ -11,11 +11,18 @@ namespace EncapsulationDemoWithDieClass
     /// </summary>
     class Die
     {
-        Random rand;   
+        // Static fields are shared accross all instances of a class
+        static Random rand;
+
+        // Static constructors are called once for all instances of this class
+        static Die()
+        {
+            rand = new Random(); 
+        }
+
 
         public Die()
-        {
-            rand = new Random();
+        {            
             // Roll die on creation to generate first random number to avoid a value of 0.
             Roll(); 
         }
@@ -23,7 +30,8 @@ namespace EncapsulationDemoWithDieClass
         /// <summary>
         /// The face-up value of the die.
         /// </summary>
-        public byte Value { get; private set; } // Value can only be set inside this class
+        // private set; means the Value can only be set inside this class
+        public byte Value { get; private set; } 
 
         /// <summary>
         /// Returns true if the die is currently held
