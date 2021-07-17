@@ -20,5 +20,17 @@ namespace EncapsulationDemoWithDieClass
         /// Returns true if the die is currently held
         /// </summary>
         public bool IsHeld { get; set; }
+
+        /// <summary>
+        /// Rolls a new random value between 1 - 6
+        /// and returns the newly rolled value.
+        /// </summary>
+        public byte Roll()
+        {
+            Random rand = new Random();
+            Value = (byte)rand.Next(1, 7);
+            return Value;
+        }
+
     }
 }
