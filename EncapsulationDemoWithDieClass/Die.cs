@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 namespace EncapsulationDemoWithDieClass
 {
     /// <summary>
-    /// Represents a single six-sided game die.
+    /// Represents a single game dice.
     /// </summary>
     class Die
     {
         // Static fields are shared accross all instances of a class
         static Random rand;
+
+        byte minValue;
+        byte maxValue;
 
         // Static constructors are called once for all instances of this class
         static Die()
@@ -25,6 +28,18 @@ namespace EncapsulationDemoWithDieClass
         {            
             // Roll die on creation to generate first random number to avoid a value of 0.
             Roll(); 
+        }
+
+        /// <summary>
+        /// Creates a die with numbers between the minimum
+        /// and maxiumum values.
+        /// </summary>
+        /// <param name="minValue">The inclusive lower bound</param>
+        /// <param name="maxValue">The inclusive maximum bound</param>
+        public Die(byte minValue, byte maxValue)
+        {
+            this.minValue = minValue;
+            this.maxValue = maxValue;
         }
 
         /// <summary>
@@ -48,7 +63,9 @@ namespace EncapsulationDemoWithDieClass
         {
             if (!IsHeld) // If Die is not held
             {
-                Value = (byte)rand.Next(1, 7);
+                // Generate random value between minValue and maxValue + 1.
+                // Add 1 to maxValue due to the upper bound being exclusive.
+                Value = (byte)rand.Next(minValue, maxValue + 1);
             }
             
             return Value;
