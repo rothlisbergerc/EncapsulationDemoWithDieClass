@@ -40,7 +40,9 @@ namespace EncapsulationDemoWithDieClass
 
         /// <summary>
         /// Rolls a new random value between 1 - 6
-        /// and returns the newly rolled value.
+        /// and returns the newly rolled value. 
+        /// If the die is held, the current value will be returned
+        /// and no new value generated. 
         /// </summary>
         public byte Roll()
         {            
