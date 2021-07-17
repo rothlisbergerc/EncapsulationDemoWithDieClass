@@ -10,6 +10,7 @@ namespace EncapsulationDemoWithDieClass
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }

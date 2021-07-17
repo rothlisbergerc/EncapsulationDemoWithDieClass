@@ -11,6 +11,14 @@ namespace EncapsulationDemoWithDieClass
     /// </summary>
     class Die
     {
+        /// <summary>
+        /// The face-up value of the die.
+        /// </summary>
+        public byte Value { get; set; }
 
+        /// <summary>
+        /// Returns true if the die is currently held
+        /// </summary>
+        public bool IsHeld { get; set; }
     }
 }
