@@ -11,6 +11,15 @@ namespace EncapsulationDemoWithDieClass
     /// </summary>
     class Die
     {
+        Random rand;   
+
+        public Die()
+        {
+            rand = new Random();
+            // Roll die on creation to generate first random number to avoid a value of 0.
+            Roll(); 
+        }
+
         /// <summary>
         /// The face-up value of the die.
         /// </summary>
@@ -26,8 +35,7 @@ namespace EncapsulationDemoWithDieClass
         /// and returns the newly rolled value.
         /// </summary>
         public byte Roll()
-        {
-            Random rand = new Random();
+        {            
             Value = (byte)rand.Next(1, 7);
             return Value;
         }
